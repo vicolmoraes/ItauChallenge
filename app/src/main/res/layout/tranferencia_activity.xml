@@ -72,6 +72,7 @@
                 tools:listitem="@layout/contato_item"
                 android:orientation="vertical"
                 android:visibility="gone"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
                 android:nestedScrollingEnabled="false"
                 tools:itemCount="9"
                 app:layout_constrainedHeight="true"

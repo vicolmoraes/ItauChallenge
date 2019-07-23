@@ -1,5 +1,6 @@
 package com.vicolmoraes.itauchallenge
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
@@ -23,5 +24,10 @@ class TransferenciaEfetivacaoActivity : AppCompatActivity() {
         btConta = bt_conta_transferencia_efetivacao_activity
         etValor = et_valor_contato_transferencia_efetivacao_activity
         btConfirmar = bt_confirmar_transferencia_efetivacao_activity
+        btConfirmar.setOnClickListener {
+            val intent: Intent = Intent(this, SucessoActivity::class.java)
+            startActivity(intent)
+        }
+        etValor.addTextChangedListener(MaskEditUtil.mask(etValor, MaskEditUtil.FORMAT_REAL));
     }
 }

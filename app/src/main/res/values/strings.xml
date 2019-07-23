@@ -12,6 +12,8 @@
     <string name="landing_page_titulo">nossos serviços</string>
     <string name="landing_page_subtitulo">disponíveis para você</string>
 
+    <string name="formatacao_reais">R$ %1$.2f</string>
+
     <string name="sucesso">Tranferência efetuada com sucesso !!!</string>
     <string name="erro">Tranferência não pode ser efetuada, revise os valores !!!</string>
 

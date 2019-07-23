@@ -1,5 +1,6 @@
 package com.vicolmoraes.itauchallenge
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
@@ -14,6 +15,7 @@ class TransferenciaActivity : AppCompatActivity() {
     lateinit var btContaCorrente: Button
     lateinit var btContaPoupanca: Button
     lateinit var tvPara: TextView
+    var conta: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +35,8 @@ class TransferenciaActivity : AppCompatActivity() {
             btContaPoupanca.isEnabled = true
             tvPara.visibility = VISIBLE
             rvContatos.visibility = VISIBLE
+            setRecycler()
+            conta = 0
         }
 
         btContaPoupanca.setOnClickListener {
@@ -40,6 +44,22 @@ class TransferenciaActivity : AppCompatActivity() {
             btContaPoupanca.isEnabled = false
             tvPara.visibility = VISIBLE
             rvContatos.visibility = VISIBLE
+            setRecycler()
+            conta = 1
         }
+    }
+
+    private fun setRecycler() {
+        var lista: ArrayList<String> = ArrayList()
+        lista.add("joao")
+        lista.add("marcia")
+
+        rvContatos.adapter = ContatosAdapter(lista, this, { partItem: String -> partItemClicked(partItem) })
+    }
+
+    private fun partItemClicked(contato: String) {
+        val intent: Intent = Intent(this, TransferenciaEfetivacaoActivity::class.java)
+        intent.putExtra("contato", contato)
+        startActivity(intent)
     }
 }
