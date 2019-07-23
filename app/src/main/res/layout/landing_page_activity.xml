@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:background="@color/bege_ffe9e1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <include
+            android:id="@+id/in_toolbar"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:id="@+id/tv_titulo_landing_page_activity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="24sp"
+            android:textColor="@color/blue_4665dd"
+            android:text="nossos serviços"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/in_toolbar"/>
+
+    <TextView
+            android:id="@+id/tv_subtitulo_landing_page_activity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="disponíveis para você"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_titulo_landing_page_activity"
+            app:layout_constraintEnd_toEndOf="@+id/tv_titulo_landing_page_activity"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo_landing_page_activity"/>
+
+    <android.support.v7.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_subtitulo_landing_page_activity"
+            app:layout_constraintStart_toStartOf="@+id/tv_subtitulo_landing_page_activity">
+        <android.support.constraint.ConstraintLayout android:layout_width="match_parent"
+                                                     android:layout_height="match_parent"
+                                                     android:background="@color/white_ffffff">
+            <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_money_icon_icons_com_66887"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/tv_transferencias_landing_page_activity"
+                    app:layout_constraintStart_toStartOf="@+id/tv_transferencias_landing_page_activity"/>
+
+            <TextView
+                    android:id="@+id/tv_transferencias_landing_page_activity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="tranferências"
+                    android:layout_marginBottom="24dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
