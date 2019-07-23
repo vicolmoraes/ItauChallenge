@@ -3,18 +3,19 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_height="wrap_content"
         android:minHeight="50dp">
 
     <TextView
+            android:id="@+id/tv_nome_contato_item"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Amanda"
+            tools:text="Amanda"
             android:textColor="@color/gray_808080"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:textSize="16sp"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:textSize="@dimen/med_font_size"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:background="@color/bege_ffe9e1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -21,9 +21,9 @@
                 android:id="@+id/tv_de_transferencia_efetivacao_activity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="@dimen/med_font_size"
                 app:layout_constraintTop_toBottomOf="@+id/in_toolbar"
-                android:text="De:"
+                android:text="@string/tranferencia_de"
                 android:textColor="@color/black_000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/selector_botao"
                 android:textAllCaps="false"
-                android:text="Conta Corrente (R$ 1000,00)"
+                android:text="@string/tranferencia_conta_corrente"
                 app:layout_constraintTop_toBottomOf="@+id/tv_de_transferencia_efetivacao_activity"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -44,9 +44,9 @@
                 android:id="@+id/tv_para_transferencia_efetivacao_activity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp"
+                android:textSize="@dimen/med_font_size"
                 app:layout_constraintTop_toBottomOf="@+id/bt_conta_transferencia_efetivacao_activity"
-                android:text="Para:"
+                android:text="@string/tranferencia_para"
                 android:textColor="@color/black_000000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -57,11 +57,11 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:textSize="24sp"
-                android:padding="8dp"
+                android:textSize="@dimen/max_font_size"
+                android:padding="@dimen/margin_8"
                 android:textColor="@color/black_000000"
                 android:background="@color/white_ffffff"
-                android:text="Amanda"
+                tools:text="Amanda"
                 app:layout_constraintTop_toBottomOf="@+id/tv_para_transferencia_efetivacao_activity"/>
 
         <View
@@ -74,36 +74,38 @@
                 app:layout_constraintEnd_toEndOf="parent"/>
 
         <EditText
-                android:id="@+id/tv_valor_contato_transferencia_efetivacao_activity"
+                android:id="@+id/et_valor_contato_transferencia_efetivacao_activity"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:textAlignment="textEnd"
-                android:textSize="64sp"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                android:paddingBottom="48dp"
-                android:paddingTop="48dp"
-                android:hint="R$0,00"
+                android:textSize="@dimen/super_font_size"
+                android:paddingStart="@dimen/margin_8"
+                android:paddingEnd="@dimen/margin_8"
+                android:paddingBottom="@dimen/margin_48"
+                android:paddingTop="@dimen/margin_48"
+                android:hint="@string/tranferencia_valor_default"
                 android:textColor="@color/black_000000"
                 android:background="@color/white_ffffff"
-                app:layout_constraintTop_toBottomOf="@+id/v_separador_transferencia_efetivacao_activity"/>
+                android:inputType="numberDecimal"
+                app:layout_constraintTop_toBottomOf="@+id/v_separador_transferencia_efetivacao_activity"
+                tools:ignore="Autofill"/>
 
         <Button
+                android:id="@+id/bt_confirmar_transferencia_efetivacao_activity"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginTop="@dimen/margin_24"
+                android:layout_marginStart="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_8"
                 android:textAllCaps="false"
-                android:textSize="14sp"
                 android:textColor="@color/white_ffffff"
-                android:text="Confirmar"
+                android:text="@string/tranferencia_confirmar"
                 android:background="@drawable/botao_laranja"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_valor_contato_transferencia_efetivacao_activity"/>
+                app:layout_constraintTop_toBottomOf="@+id/et_valor_contato_transferencia_efetivacao_activity"/>
     </android.support.constraint.ConstraintLayout>
 
 </android.support.v4.widget.NestedScrollView>

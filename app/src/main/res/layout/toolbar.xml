@@ -7,4 +7,4 @@
                                    android:background="@color/white_ffffff"
                                    app:title="Olá Vitória"
                                    android:visibility="visible"
-                                   app:titleTextColor="@color/black_000000"/>
+                                   app:titleTextColor="@color/gray_808080"/>
