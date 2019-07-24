@@ -1,6 +1,5 @@
 
   {
-  "usuario": {
     "nome": "Vitoria Oliveira",
     "conta_corrente": 1000.00,
     "conta_poupanca": 5000.50,
@@ -15,5 +14,4 @@
       "Julia Villela",
       "Carolina Santos"
     ]
-  }
   }
