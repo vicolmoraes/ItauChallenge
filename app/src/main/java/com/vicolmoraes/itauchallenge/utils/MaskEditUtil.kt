@@ -7,7 +7,7 @@ import android.widget.EditText
 
 object MaskEditUtil {
 
-    val FORMAT_REAL = "R$ ######,##"
+    val FORMAT_REAL = "R$ #########"
     val FORMAT_CPF = "###.###.###-##"
     val FORMAT_FONE = "(###)####-#####"
     val FORMAT_CEP = "#####-###"
@@ -61,12 +61,10 @@ object MaskEditUtil {
     }
 
     fun unmask(s: String): String {
-        return s.replace("[.]".toRegex(), "")
-            .replace("[-]".toRegex(), "")
+        return s.replace("[-]".toRegex(), "")
             .replace("[/]".toRegex(), "")
             .replace("[(]".toRegex(), "")
             .replace("[ ]".toRegex(), "")
-            .replace("[,]".toRegex(), "")
             .replace("[:]".toRegex(), "")
             .replace("[)]".toRegex(), "")
             .replace("[R$]".toRegex(), "")

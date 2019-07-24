@@ -8,13 +8,14 @@ import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.TextView
 import com.vicolmoraes.itauchallenge.R
+import com.vicolmoraes.itauchallenge.model.Usuario
 import com.vicolmoraes.itauchallenge.transferenciaEfetivacao.TransferenciaEfetivacaoActivity
 import kotlinx.android.synthetic.main.tranferencia_activity.*
 
 class TransferenciaActivity : AppCompatActivity() {
 
     lateinit var interactor: TransferenciaInteractor
-
+    lateinit var usuario: Usuario
     lateinit var rvContatos: RecyclerView
     lateinit var btContaCorrente: Button
     lateinit var btContaPoupanca: Button
@@ -35,13 +36,13 @@ class TransferenciaActivity : AppCompatActivity() {
         btContaPoupanca = bt_poupanca_transferencia_activity
         rvContatos = rv_contatos_transferencia_activity
         tvPara = tv_para_transferencia_activity
+        interactor.fetch()
 
         btContaCorrente.setOnClickListener {
             btContaCorrente.isEnabled = false
             btContaPoupanca.isEnabled = true
             tvPara.visibility = VISIBLE
             rvContatos.visibility = VISIBLE
-            interactor.fetch()
             conta = 0
         }
 
@@ -50,13 +51,19 @@ class TransferenciaActivity : AppCompatActivity() {
             btContaPoupanca.isEnabled = false
             tvPara.visibility = VISIBLE
             rvContatos.visibility = VISIBLE
-            interactor.fetch()
             conta = 1
         }
     }
 
-    fun setRecycler(lista: ArrayList<String>) {
+    fun setValores(usuario: Usuario) {
+        this.usuario = usuario
+        btContaCorrente.text =
+            getString(R.string.tranferencia_conta_corrente) + "(" + usuario.conta_corrente.toString() + ")"
+        btContaPoupanca.text =
+            getString(R.string.tranferencia_conta_poupanca) + "(" + usuario.conta_poupanca.toString() + ")"
+    }
 
+    fun setRecycler(lista: ArrayList<String>) {
         rvContatos.adapter = ContatosAdapter(
             lista,
             this,
@@ -65,6 +72,11 @@ class TransferenciaActivity : AppCompatActivity() {
 
     private fun partItemClicked(contato: String) {
         val intent: Intent = Intent(this, TransferenciaEfetivacaoActivity::class.java)
+        if (conta == 0)
+            intent.putExtra("conta", btContaCorrente.text)
+        else
+            intent.putExtra("conta", btContaPoupanca.text)
+
         intent.putExtra("contato", contato)
         startActivity(intent)
     }

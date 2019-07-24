@@ -6,7 +6,7 @@ class TransferenciaPresenter {
     lateinit var mainActivity: TransferenciaActivity
 
     fun setContatos(usuario: Usuario) {
-
         mainActivity.setRecycler(usuario.contatos)
+        mainActivity.setValores(usuario)
     }
 }
