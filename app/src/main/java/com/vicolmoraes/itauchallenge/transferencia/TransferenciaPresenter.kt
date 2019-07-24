@@ -5,8 +5,8 @@ import com.vicolmoraes.itauchallenge.model.Usuario
 class TransferenciaPresenter {
     lateinit var mainActivity: TransferenciaActivity
 
-    fun setContatos(usuario: List<Usuario>) {
+    fun setContatos(usuario: Usuario) {
 
-        mainActivity.setRecycler(usuario.get(0).contatos)
+        mainActivity.setRecycler(usuario.contatos)
     }
 }

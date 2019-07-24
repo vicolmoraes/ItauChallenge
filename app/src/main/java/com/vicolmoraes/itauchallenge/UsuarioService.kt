@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface UsuarioService {
     @GET("itau.json")
-    fun list(): Call<List<Usuario>>
+    fun list(): Call<Usuario>
 }

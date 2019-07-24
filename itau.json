@@ -1,4 +1,4 @@
-[
+
   {
   "usuario": {
     "nome": "Vitoria Oliveira",
@@ -16,23 +16,4 @@
       "Carolina Santos"
     ]
   }
-  },
-  {
-    "usuario": {
-      "nome": "João Oliveira",
-      "conta_corrente": 1000.00,
-      "conta_poupanca": 5000.50,
-      "contatos": [
-        "Amanda Mesquita",
-        "Caio Albuquerque",
-        "João da Silva",
-        "Luara Santos",
-        "Alice Oliveira",
-        "Pedro Torres",
-        "Bruna Wenzel",
-        "Julia Villela",
-        "Carolina Santos"
-      ]
-    }
   }
-]
