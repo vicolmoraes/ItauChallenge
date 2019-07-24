@@ -1,9 +1,11 @@
-package com.vicolmoraes.itauchallenge
+package com.vicolmoraes.itauchallenge.landingPage
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.CardView
+import com.vicolmoraes.itauchallenge.R
+import com.vicolmoraes.itauchallenge.transferencia.TransferenciaActivity
 import kotlinx.android.synthetic.main.landing_page_activity.*
 
 class LandingPageActivity : AppCompatActivity() {

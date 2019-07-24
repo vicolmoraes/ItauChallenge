@@ -1,13 +1,14 @@
-package com.vicolmoraes.itauchallenge
+package com.vicolmoraes.itauchallenge.sucesso
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.vicolmoraes.itauchallenge.R
 
-class ErroActivity : AppCompatActivity() {
+class SucessoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.erro_activity)
+        setContentView(R.layout.sucesso_activity)
 
     }
 

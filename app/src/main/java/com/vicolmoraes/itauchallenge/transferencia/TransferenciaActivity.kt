@@ -1,4 +1,4 @@
-package com.vicolmoraes.itauchallenge
+package com.vicolmoraes.itauchallenge.transferencia
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,13 @@ import android.support.v7.widget.RecyclerView
 import android.view.View.VISIBLE
 import android.widget.Button
 import android.widget.TextView
+import com.vicolmoraes.itauchallenge.R
+import com.vicolmoraes.itauchallenge.transferenciaEfetivacao.TransferenciaEfetivacaoActivity
 import kotlinx.android.synthetic.main.tranferencia_activity.*
 
 class TransferenciaActivity : AppCompatActivity() {
+
+    lateinit var interactor: TransferenciaInteractor
 
     lateinit var rvContatos: RecyclerView
     lateinit var btContaCorrente: Button
@@ -20,6 +24,8 @@ class TransferenciaActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tranferencia_activity)
+
+        TransferenciaConfigurator.INSTANCE.setCleanArchitecture(this)
 
         findViews()
     }
@@ -35,7 +41,7 @@ class TransferenciaActivity : AppCompatActivity() {
             btContaPoupanca.isEnabled = true
             tvPara.visibility = VISIBLE
             rvContatos.visibility = VISIBLE
-            setRecycler()
+            interactor.fetch()
             conta = 0
         }
 
@@ -44,17 +50,17 @@ class TransferenciaActivity : AppCompatActivity() {
             btContaPoupanca.isEnabled = false
             tvPara.visibility = VISIBLE
             rvContatos.visibility = VISIBLE
-            setRecycler()
+            interactor.fetch()
             conta = 1
         }
     }
 
-    private fun setRecycler() {
-        var lista: ArrayList<String> = ArrayList()
-        lista.add("joao")
-        lista.add("marcia")
+    fun setRecycler(lista: ArrayList<String>) {
 
-        rvContatos.adapter = ContatosAdapter(lista, this, { partItem: String -> partItemClicked(partItem) })
+        rvContatos.adapter = ContatosAdapter(
+            lista,
+            this,
+            { partItem: String -> partItemClicked(partItem) })
     }
 
     private fun partItemClicked(contato: String) {

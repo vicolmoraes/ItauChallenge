@@ -1,4 +1,4 @@
-package com.vicolmoraes.itauchallenge
+package com.vicolmoraes.itauchallenge.model
 
 import java.io.Serializable
 

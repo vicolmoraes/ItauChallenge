@@ -1,4 +1,4 @@
-package com.vicolmoraes.itauchallenge
+package com.vicolmoraes.itauchallenge.transferencia
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import com.vicolmoraes.itauchallenge.R
 import kotlinx.android.synthetic.main.contato_item.view.*
 
 
@@ -17,7 +18,11 @@ class ContatosAdapter(val items: List<String>, val context: Context, val clickLi
     }
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): BuildingViewHolder {
-        return BuildingViewHolder(LayoutInflater.from(context).inflate(R.layout.contato_item, p0, false))
+        return BuildingViewHolder(
+            LayoutInflater.from(
+                context
+            ).inflate(R.layout.contato_item, p0, false)
+        )
     }
 
     override fun getItemCount(): Int {

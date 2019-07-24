@@ -1,10 +1,13 @@
-package com.vicolmoraes.itauchallenge
+package com.vicolmoraes.itauchallenge.transferenciaEfetivacao
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.EditText
+import com.vicolmoraes.itauchallenge.R
+import com.vicolmoraes.itauchallenge.sucesso.SucessoActivity
+import com.vicolmoraes.itauchallenge.utils.MaskEditUtil
 import kotlinx.android.synthetic.main.tranferencia_efetivacao_activity.*
 
 class TransferenciaEfetivacaoActivity : AppCompatActivity() {
@@ -28,6 +31,11 @@ class TransferenciaEfetivacaoActivity : AppCompatActivity() {
             val intent: Intent = Intent(this, SucessoActivity::class.java)
             startActivity(intent)
         }
-        etValor.addTextChangedListener(MaskEditUtil.mask(etValor, MaskEditUtil.FORMAT_REAL));
+        etValor.addTextChangedListener(
+            MaskEditUtil.mask(
+                etValor,
+                MaskEditUtil.FORMAT_REAL
+            )
+        );
     }
 }

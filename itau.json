@@ -1,4 +1,5 @@
-{
+[
+  {
   "usuario": {
     "nome": "Vitoria Oliveira",
     "conta_corrente": 1000.00,
@@ -15,4 +16,5 @@
       "Carolina Santos"
     ]
   }
-}
+  }
+]
