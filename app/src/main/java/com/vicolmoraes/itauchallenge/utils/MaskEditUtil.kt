@@ -1,6 +1,7 @@
 package com.vicolmoraes.itauchallenge.utils
 
 
+
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
@@ -31,7 +32,9 @@ object MaskEditUtil {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+
                 val str = unmask(s.toString())
+
                 var mascara = ""
                 if (isUpdating) {
                     old = str
@@ -63,6 +66,8 @@ object MaskEditUtil {
     fun unmask(s: String): String {
         return s.replace("[-]".toRegex(), "")
             .replace("[/]".toRegex(), "")
+            .replace("[.]".toRegex(), "")
+            .replace("[,]".toRegex(), "")
             .replace("[(]".toRegex(), "")
             .replace("[ ]".toRegex(), "")
             .replace("[:]".toRegex(), "")
