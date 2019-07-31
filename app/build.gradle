@@ -33,7 +33,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
 
+    // Unit testing dependencies
     testImplementation 'junit:junit:4.12'
+    // Set this dependency if you want to use Hamcrest matching
     androidTestImplementation 'com.android.support.test:testing-support-lib:0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-intents:3.0.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

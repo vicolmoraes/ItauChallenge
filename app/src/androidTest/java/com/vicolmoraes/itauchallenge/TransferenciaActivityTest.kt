@@ -5,6 +5,8 @@ import android.support.test.espresso.Espresso.onView
 import android.support.test.espresso.action.ViewActions.click
 import android.support.test.espresso.assertion.ViewAssertions
 import android.support.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
+import android.support.test.espresso.intent.Intents
+import android.support.test.espresso.intent.matcher.IntentMatchers
 import android.support.test.espresso.intent.rule.IntentsTestRule
 import android.support.test.espresso.matcher.ViewMatchers
 import android.support.test.espresso.matcher.ViewMatchers.withId
@@ -17,11 +19,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-/**
- * Instrumented test, which will execute on an Android device.
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
 @RunWith(AndroidJUnit4::class)
 @LargeTest
 class TransferenciaActivityTest {
@@ -60,6 +57,10 @@ class TransferenciaActivityTest {
                 0,
                 click()
             )
-        );
+        )
+
+        Thread.sleep(2000)
+        Intents.intended(IntentMatchers.hasComponent("com.vicolmoraes.itauchallenge.transferenciaEfetivacao.TransferenciaEfetivacaoActivity"))
+
     }
 }

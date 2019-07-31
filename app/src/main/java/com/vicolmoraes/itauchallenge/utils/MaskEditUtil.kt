@@ -74,4 +74,8 @@ object MaskEditUtil {
             .replace("[)]".toRegex(), "")
             .replace("[R$]".toRegex(), "")
     }
+
+    fun unmaskToDouble(s: String): String {
+        return s.replace("[R$]".toRegex(), "")
+    }
 }
